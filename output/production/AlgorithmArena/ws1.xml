@@ -1,0 +1,79 @@
+<?xml version="1.0" ?>
+<workspace>
+  <!-- Updated on 2023/07/14 21:46 -->
+  <username>MnbJWwIb</username>
+  <password>n-zaW0v2DRdYkGqLsD2dnp7D6czDp5g3Dlj8rMAgl0Oq</password>
+  <source>
+    <branch>244-patch</branch>
+    <revision>41967317</revision>
+  </source>
+  <modules>
+    <module>:core</module>
+    <module>:core-app</module>
+    <module>:core-app-test-func</module>
+    <module>:config</module>
+    <module>:udd-xml</module>
+    <module>:shared-labels</module>
+    <module>:shared-standard-labels</module>
+    <module>:shared</module>
+    <module>:force-sobject-common</module>
+    <module>:sfdc-test-func</module>
+    <module>:sfdc-test/func/htdocs/qa/cdp</module>
+    <module>:isv</module>
+    <module>:sfdc</module>
+    <module>:ui-sfdc-api</module>
+    <module>:ui-cdp-api</module>
+    <module>:ui-cdp-api-test-func</module>
+    <module>:ui-cdp-api-test-unit</module>
+    <module>:cdp-udd</module>
+    <module>:cdp-api</module>
+    <module>:cdp-api-test-unit</module>
+    <module>:shared-cdp-api</module>
+    <module>:shared-cdp-api-test-unit</module>
+    <module>:udd-constants</module>
+    <module>:cdp-connect-api</module>
+    <module>:cdp-udd-api</module>
+    <module>:cdp-udd-impl</module>
+    <module>:cdp-udd-impl-test-func</module>
+    <module>:cdp-udd-impl-test-unit</module>
+    <module>:core-app-test-func</module>
+    <module>:ui-cdp-components</module>
+    <module>:ui-cdp-components-test-func</module>
+    <module>:ui-cdp-components-test-unit</module>
+    <module>:ui-cdp-impl</module>
+    <module>:ui-cdp-impl-test-func</module>
+    <module>:ui-cdp-impl-test-unit</module>
+    <module>:ntc</module>
+    <module>:cdp-impl</module>
+    <module>:cdp-impl-test-func</module>
+    <module>:sfdc/config</module>
+    <module>:sfdc/java/src</module>
+    <module>:core-app/config</module>
+    <module>:config/settings/defaults</module>
+    <module>:third_party/dependencies/com_salesforce_cdp.bzl</module>
+    <module>:third_party/dependencies/pinned_catalog/com_salesforce_cdp.bzl</module>
+    <module>:identity</module>
+    <module>:identity-common-api</module>
+    <module>:xds-api</module>
+    <module>:xds-connect-api</module>
+    <!-- <module>:scratch-org</module>
+    <module>:monitoringlib</module> -->
+    <!-- <module>:licensing-management</module> -->
+    <!-- <module>:licensing-management/config</module> -->
+    <!-- <module>:udd-resource-aggregator</module> -->
+    <!-- <module>:aloha-ui</module> -->
+    <!-- <module>:udd</module> -->
+    <!-- <module>:udd-api</module> -->
+    <!-- <module>:udd-common-constants</module> -->
+    <!-- <module>:customapp-impl</module>
+    <module>:setup-api</module> -->
+    <!-- <module>:ui-parent/modules.eslintrc.json</module>
+    <module>:ui-parent/eslint/**</module> -->
+    <!-- <module>:appsmgmt</module>
+    <module>:ui-global-components</module>
+    <module>:ui-services-private</module> -->
+    <!-- <module>:workflow/test/func</module>
+    <module>:chatter</module>
+    <module>:flexipage-common-impl</module> -->
+  </modules>
+  </workspace>
