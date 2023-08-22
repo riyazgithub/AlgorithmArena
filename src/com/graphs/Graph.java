@@ -1,7 +1,6 @@
 package com.graphs;
 
 import java.util.LinkedList;
-import java.util.List;
 import java.util.Queue;
 
 public class Graph {
@@ -16,8 +15,13 @@ public class Graph {
         }
     }
 
-    void addEdge(int source, int destination) {
+    void addEdgeDirected(int source, int destination) {
         adjacencyList[source].add(destination);
+    }
+
+    void addEdgeUnDirected(int source, int destination) {
+        adjacencyList[source].add(destination);
+        adjacencyList[destination].add(source);
     }
 
     void bfs(int source) {
@@ -55,6 +59,31 @@ public class Graph {
             }
         }
 
+    }
+
+    boolean check_if_eulerian_cycle_exists() {
+        // check if all the vertices have  even edges
+
+        for(LinkedList<Integer> integerLinkedList : adjacencyList){
+            if(integerLinkedList.size() % 2 != 0)
+                return false;
+        }
+
+        boolean[] visited = new boolean[vertices];
+        for(int i = 0; i < vertices; i++) {
+            if(!visited[i]) {
+                dfs(i, visited);
+            }
+        }
+
+        // There are some vertex thats not parsed
+        for(int i = 0; i < vertices; i++) {
+            if(!visited[i]) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
 }
