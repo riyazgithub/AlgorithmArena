@@ -19,6 +19,12 @@ public class Graph {
         adjacencyList[source].add(destination);
     }
 
+    boolean addEdgeDirectedWithLoopCheck(int source, int destination) {
+        adjacencyList[source].add(destination);
+        return adjacencyList[destination].indexOf(source) == -1;
+    }
+
+
     void addEdgeUnDirected(int source, int destination) {
         adjacencyList[source].add(destination);
         adjacencyList[destination].add(source);
@@ -48,8 +54,7 @@ public class Graph {
         boolean[] visited = new boolean[vertices];
         dfs(source, visited);
     }
-
-    private void dfs(int source, boolean[] visited) {
+    void dfs(int source, boolean[] visited) {
 
         visited[source] = true;
         System.out.print(source + " ");
@@ -58,7 +63,6 @@ public class Graph {
                 dfs(in, visited);
             }
         }
-
     }
 
     boolean check_if_eulerian_cycle_exists() {
@@ -82,7 +86,6 @@ public class Graph {
                 return false;
             }
         }
-
         return true;
     }
 
