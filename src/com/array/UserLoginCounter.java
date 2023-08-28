@@ -76,6 +76,13 @@ public class UserLoginCounter {
                 Arrays.asList("user2", "21:00:00", "2021-01-01")
         );
 
-        System.out.println(countUserLogins(logs));
+//        System.out.println(countUserLogins(logs));
+
+        Queue<Integer> q = new LinkedList<>();
+        q.offer(1);
+        q.offer(2);
+        q.offer(3);
+        System.out.println(q);
+
     }
 }

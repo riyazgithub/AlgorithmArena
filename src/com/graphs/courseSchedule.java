@@ -1,7 +1,8 @@
 package com.graphs;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 
 /**
@@ -51,7 +52,47 @@ public class courseSchedule {
             }
         }
     }
+
     public boolean canFinish(int numCourses, int[][] prerequisites) {
+        List<Integer>[] adj = new List[numCourses];
+        int[] indegree = new int[numCourses];
+        List<Integer> ans = new ArrayList<>();
+
+        // building graph
+
+        for(int[] pair : prerequisites) {
+            int course = pair[0];
+            int prereq = pair[1];
+            if(adj[prereq] == null){
+                adj[prereq] = new ArrayList<>();
+            }
+            adj[prereq].add(course);
+            indegree[course]++;
+        }
+
+        Queue<Integer> queue = new LinkedList<>();
+        for (int i =0; i<numCourses; i++) {
+            if(indegree[i] == 0) {
+                queue.offer(i);
+            }
+        }
+
+        while(!queue.isEmpty()) {
+            int curr = queue.poll();
+            ans.add(curr);
+            if(adj[curr] !=null){
+                for(int nei : adj[curr]) {
+                    indegree[nei]--;
+                    if(indegree[nei] == 0) {
+                        queue.offer(nei);
+                    }
+                }
+            }
+        }
+        return ans.size()==numCourses;
+    }
+
+    public boolean canFinish1(int numCourses, int[][] prerequisites) {
         Graph graph = new Graph(numCourses);
         if(!constructgraph(graph, prerequisites))
         {
@@ -77,10 +118,12 @@ public class courseSchedule {
     public static void main(String[] args) {
 
         int[][] prerequisites = {
-            {0, 1}
+            {0, 1},
+                {1, 0}
         };
 
         courseSchedule cs = new courseSchedule();
+//        System.out.println(cs.canFinish1(2, prerequisites));
         System.out.println(cs.canFinish(2, prerequisites));
     }
 
