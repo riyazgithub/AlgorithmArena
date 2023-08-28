@@ -2,6 +2,7 @@ package com.graphs;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Queue;
 
 /**
  * 207. Course Schedule
@@ -85,6 +86,8 @@ public class courseSchedule {
 
     public boolean constructgraph(Graph graph, int[][] prerequisites) {
 
+        Queue<Integer> queue = new LinkedList<>();
+        queue.offer(0);
         for (int i =0; i< prerequisites.length; i++) {
             if(!graph.addEdgeDirectedWithLoopCheck(prerequisites[i][0], prerequisites[i][1]))
                 return false;
