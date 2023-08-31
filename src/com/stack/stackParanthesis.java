@@ -75,27 +75,26 @@ class stackParanthesis {
     public String longestValidParantheses(String input) {
         Stack<Integer> stack= new Stack<>();
         char[] chars = input.toCharArray();
-        int max =0;
-        int p1=0,p2=0;
-         stack.push(-1);
-         for(int i =0; i< chars.length; i++){
-             if(chars[i] == '(') {
-                 stack.push(i);
-             } else if (chars[i] == ')') {
-                     stack.pop();
-                     if(stack.empty())
-                     {
-                         stack.push(i);
-                         p2 = i;
-                     }else if(max < i - stack.peek()){
+        stack.push(-1); int max =0, p1=0,p2=0;
+        for (int i =0; i < chars.length; i++){
+            if(chars[i] == '(')
+                stack.push(i);
+            else if(chars[i] == ')') {
+                stack.pop();
+                if(stack.isEmpty())
+                    stack.push(i);
+                else {
+                    if(max < i - stack.peek()) {
+                        p1 = stack.peek();
+                        p2 = i;
                          max = i - stack.peek();
-                         p1 =i; p2=stack.peek();
-                     }
-
-             }
-         }
-        System.out.println(String.format("Input: %s, New Max %s , start %s , End %s, substring %s", input, max, p1, p2, input.substring(p1,p2+1)));
-        return "";
+                    }
+                }
+            }
+        }
+        System.out.println("Max len "+max);
+        System.out.println(String.format("Input: %s, New Max %s , start %s , End %s, substring %s", input, max, p1, p2, input.substring(p1+1,p2+1)));
+        return (max==0) ? "": input.substring(p1+1,p2+1);
     }
 
     public static void main(String[] args) {
