@@ -30,10 +30,8 @@ package com.stack;
 
  */
 
-
-
 // Main class should be named 'Solution' and should not be public.
-class stackParanthesis {
+class stackLongParanthesis {
 
     public String longestValidParantheses_(String input) {
         Stack<Character> pStack = new Stack<>();
@@ -100,7 +98,7 @@ class stackParanthesis {
     public static void main(String[] args) {
         System.out.println("Hello, World");
 
-        stackParanthesis s = new stackParanthesis();
+        stackLongParanthesis s = new stackLongParanthesis();
         System.out.println(s.longestValidParantheses(")()(()())("));
         System.out.println(s.longestValidParantheses(")()())"));
         System.out.println(s.longestValidParantheses("(())((((())))"));

@@ -1,4 +1,4 @@
-package com.aiseraTest;
+package main.java.aiseraTest;
 
 import java.util.ArrayList;
 import java.util.Comparator;
