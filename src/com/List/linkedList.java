@@ -63,6 +63,7 @@ public class linkedList {
         node6.next = node7;
         node7.next = node8;
         node8.next = node9;
+        node9.next = node10;
         linkedList ll =new linkedList();
         node1.printList();
         ListNode rev = ll.reverseList(node1);
