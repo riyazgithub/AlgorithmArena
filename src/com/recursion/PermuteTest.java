@@ -4,18 +4,35 @@ import java.util.*;
 
 public class PermuteTest {
 
+    // Define a custom comparator for List<List<Integer>>
+    Comparator<List<Integer>> listComparator = (list1, list2) -> {
+        int size1 = list1.size();
+        int size2 = list2.size();
+        int minSize = Math.min(size1, size2);
+
+        for (int i = 0; i < minSize; i++) {
+            int cmp = Integer.compare(list1.get(i), list2.get(i));
+            if (cmp != 0) {
+                return cmp;
+            }
+        }
+
+        return Integer.compare(size1, size2);
+    };
+
+
     public static void main(String[] args) {
         PermuteTest tester = new PermuteTest();
 
-        // Test Case 1
-//        int[] nums1 = {1, 2, 3};
-//        tester.testPermute(nums1);
-//
-//        // Test Case 2
-//        int[] nums2 = {4, 5};
-//        tester.testPermute(nums2);
+//         Test Case 1
+        int[] nums1 = {1, 2, 3};
+        tester.testPermute(nums1);
 
-        tester.testletterCase();
+        // Test Case 2
+        int[] nums2 = {4, 5};
+        tester.testPermute(nums2);
+
+//        tester.testUniqueSubsets();
     }
 
     public void testUniqueSubsets() {
@@ -30,8 +47,18 @@ public class PermuteTest {
         listOfLists.add(Arrays.asList(2, 3)); // [2, 3]
         listOfLists.add(Arrays.asList(1, 2, 3)); // [1, 2, 3]
 
-        Collections.sort(Collections.unmodifiableList(listOfLists));
+   // Sort the list of lists using the custom comparator
+        Collections.sort(listOfLists, listComparator);
 
+        UniqueSubSets uss = new UniqueSubSets();
+        List<List<Integer>> result = uss.subsets(new int[] {1,2,3});
+
+        Collections.sort(result, listComparator);
+
+        if(result.equals(listOfLists)){
+            System.out.println("Pass");
+        } else
+            System.out.println("Fail");
     }
     public void testletterCase() {
         List<String> expected = new ArrayList<>();
