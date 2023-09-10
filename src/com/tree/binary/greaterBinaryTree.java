@@ -9,6 +9,7 @@ public class greaterBinaryTree {
         System.out.println("In-Order Traversal of Constructed Binary Tree:");
         TreeUtils.printInOrder(root);
 
+        System.out.println();
         TreeUtils.bstToGst(root);
         TreeUtils.printInOrder(root);
     }

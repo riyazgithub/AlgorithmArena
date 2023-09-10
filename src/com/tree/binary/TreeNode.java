@@ -11,4 +11,11 @@ package com.tree.binary;
           this.left = left;
           this.right = right;
       }
-  }
+
+     @Override
+     public String toString() {
+         return "TreeNode{" +
+                 "val=" + val +
+                 '}';
+     }
+ }

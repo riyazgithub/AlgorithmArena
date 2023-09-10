@@ -8,6 +8,29 @@ import java.util.Set;
 public class covertFromOneToAnother {
     public static void main(String[] args) {
         // Create a Set
+
+    }
+
+    public void convertArrayListIntegerToArray() {
+        List<Integer> convert = new ArrayList<>();
+        // Sample data for testing
+        convert.add(1);
+        convert.add(2);
+        convert.add(3);
+        convert.add(4);
+
+        int[] nums = new int[convert.size()];
+        for (int i = 0; i < convert.size(); i++) {
+            nums[i] = convert.get(i);
+        }
+
+        // Print the array for verification
+        for (int num : nums) {
+            System.out.println(num);
+        }
+    }
+
+    public void convertHashSetToArrayList() {
         Set<Integer> numberSet = new HashSet<>();
         numberSet.add(1);
         numberSet.add(2);
@@ -17,8 +40,8 @@ public class covertFromOneToAnother {
 
         // Convert Set to List
         List<Integer> numberList = new ArrayList<>(numberSet);
-
         // Print the List
         System.out.println("List: " + numberList);
     }
+
 }
