@@ -12,5 +12,13 @@ public class greaterBinaryTree {
         System.out.println();
         TreeUtils.bstToGst(root);
         TreeUtils.printInOrder(root);
+        System.out.println();
+        TreeUtils.printTreeGraphics(root);
+
+        TreeNode root1 = TreeUtils.arrayToTree(new int[]{1,2,3,4,5}, 0);
+        System.out.println();
+        TreeUtils.printTreeGraphics(root1);
+
+
     }
 }

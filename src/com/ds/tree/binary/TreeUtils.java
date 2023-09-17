@@ -69,8 +69,48 @@ public class TreeUtils {
         bstToGst(root.left, sum);
     }
 
-    public TreeNode sortedArrayToBST(int[] nums) {
-        List<Integer> convert = new ArrayList<>();
-        return null;
+    public static TreeNode arrayToTree(Integer[] array) {
+        if (array == null || array.length == 0 || array[0] == null) {
+            return null;
+        }
+
+        TreeNode root = new TreeNode(array[0]);
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.offer(root);
+
+        int index = 1;
+        while (!queue.isEmpty() && index < array.length) {
+            TreeNode current = queue.poll();
+
+            if (array[index] != null) {
+                current.left = new TreeNode(array[index]);
+                queue.offer(current.left);
+            }
+            index++;
+
+            if (index < array.length && array[index] != null) {
+                current.right = new TreeNode(array[index]);
+                queue.offer(current.right);
+            }
+            index++;
+        }
+
+        return root;
+    }
+
+    /**
+     * Print tree in graphical format
+     * @param root
+     */
+    public static void printTreeGraphics(TreeNode root) {
+        printTreeGraphics(root, "", true);
+    }
+
+    private static void printTreeGraphics(TreeNode node, String prefix, boolean isLeft) {
+        if (node != null) {
+            System.out.println(prefix + (isLeft ? "├── " : "└── ") + node.val);
+            printTreeGraphics(node.left, prefix + (isLeft ? "│   " : "    "), true);
+            printTreeGraphics(node.right, prefix + (isLeft ? "│   " : "    "), false);
+        }
     }
 }

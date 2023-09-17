@@ -30,6 +30,19 @@ public class covertFromOneToAnother {
         }
     }
 
+    public void printListOfList(List<List<Integer>> printList){
+        System.out.println("Size of List of Lists: " + printList.size());
+
+        for (int i = 0; i < printList.size(); i++) {
+            System.out.println("List " + (i + 1) + ":");
+            List<Integer> innerList = printList.get(i);
+
+            for (int j = 0; j < innerList.size(); j++) {
+                System.out.print(innerList.get(j) + ", ");
+            }
+            System.out.println();
+        }
+    }
     public void convertHashSetToArrayList() {
         Set<Integer> numberSet = new HashSet<>();
         numberSet.add(1);
