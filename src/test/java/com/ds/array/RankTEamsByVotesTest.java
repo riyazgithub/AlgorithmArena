@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class RankTEamsByVotesTest {
     @Test
     public void testRankTeams() {
-        RankTEamsByVotes solution = new RankTEamsByVotes();
+        RankTeamsByVotes solution = new RankTeamsByVotes();
 
         // Test case 1: Single vote, single team
 //        String[] votes1 = { "A" };
