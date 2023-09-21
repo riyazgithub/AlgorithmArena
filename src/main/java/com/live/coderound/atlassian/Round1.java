@@ -1,4 +1,4 @@
-package com.live.coderound;
+package com.live.coderound.atlassian;
 
 /**
  * We need to implement a system that helps us determine the winner(s) of an Innovation Week / Business Idea Competition.

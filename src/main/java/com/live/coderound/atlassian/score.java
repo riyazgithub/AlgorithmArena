@@ -1,4 +1,4 @@
-package com.live.coderound;
+package com.live.coderound.atlassian;
 
 public class score {
     int idea;

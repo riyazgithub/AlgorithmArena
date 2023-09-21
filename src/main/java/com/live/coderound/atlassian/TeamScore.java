@@ -1,4 +1,4 @@
-package com.live.coderound;
+package com.live.coderound.atlassian;
 
 public class TeamScore {
     int teamScore;

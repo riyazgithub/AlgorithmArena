@@ -1,5 +1,7 @@
-package com.live.coderound;
+package com.live.coderound.atlassian;
 
+import com.live.coderound.atlassian.Round1;
+import com.live.coderound.atlassian.score;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
