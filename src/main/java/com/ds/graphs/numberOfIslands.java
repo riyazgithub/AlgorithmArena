@@ -20,6 +20,7 @@ package com.ds.graphs;
  * Output: 1
  */
 public class numberOfIslands {
+        int maxArea =0;
         public int numIslands(char[][] grid) {
         int countOfIslands = 0;
         for(int i = 0; i< grid.length;i++) {
@@ -27,23 +28,24 @@ public class numberOfIslands {
                 if(grid[i][j] == '1')
                 {
                     countOfIslands++;
-                    dfsIslands(grid, i, j, grid.length, grid[i].length);
+                    dfsIslands(grid, i, j, grid.length, grid[i].length,0);
                 }
         }
         return countOfIslands;
     }
 
-    private void dfsIslands(char[][] grid, int x, int y, int rows, int cols) {
+    private void dfsIslands(char[][] grid, int x, int y, int rows, int cols, int tmpMax) {
         // base condition
         if(x <0 || x>=rows || y<0 || y>= cols || grid[x][y] != '1') {
+            maxArea = Math.max(maxArea, tmpMax);
             return;
         }
 
         grid[x][y] = '0';
-        dfsIslands(grid, x-1,y, rows, cols);
-        dfsIslands(grid, x+1,y, rows, cols);
-        dfsIslands(grid, x,y-1, rows, cols);
-        dfsIslands(grid, x,y+1, rows, cols);
+        dfsIslands(grid, x-1,y, rows, cols, tmpMax+1);
+        dfsIslands(grid, x+1,y, rows, cols, tmpMax+1);
+        dfsIslands(grid, x,y-1, rows, cols, tmpMax+1);
+        dfsIslands(grid, x,y+1, rows, cols, tmpMax+1);
     }
     public static void main(String[] args) {
 
@@ -51,10 +53,11 @@ public class numberOfIslands {
         char[][] grid = {
                 {'1','1','0','0','0'},
                 {'1','1','0','1','0'},
-                {'0','0','1','0','0'},
-                {'1','0','0','0','1'}
+                {'1','0','1','0','0'},
+                {'0','0','0','0','1'}
         };
         System.out.println(n.numIslands(grid));
+        System.out.println(n.maxArea);
     }
 
 }
