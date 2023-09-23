@@ -1,13 +1,13 @@
 package com.live.coderound.atlassian;
 
 /**
- * We need to implement a system that helps us determine the winner(s) of an Innovation Week / Business Idea Competition.
+ * We need to implement a system that helps us determine the winner(s) of an Hackathon Competition.
  * There can be  ‘T’ teams participating with
  * ‘J’ judges voting for them across 3 categories:
  * Idea, Implementation, Impact.
  * Each category score ranges from 1 to 5 with a total score of any team ranging from 3 to 15 (maximum).
  * A judge’s vote is a set of  3 numbers denoting the score across each category.
- * For e.g., judge Judy can vote for team Tornadoes as such (Idea: 3,  Implementation: 5, Impact: 2).
+ * For e.g., judge Jake can vote for team Bears as such (Idea: 3,  Implementation: 5, Impact: 2).
  * Ask is to find the top 3 teams (Winner, 1st runner up, 2nd runner up).
  * Winner is team with largest scores.
  */
