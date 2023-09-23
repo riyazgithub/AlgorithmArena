@@ -50,7 +50,7 @@ public class PermuteTest {
    // Sort the list of lists using the custom comparator
         Collections.sort(listOfLists, listComparator);
 
-        UniqueSubSets uss = new UniqueSubSets();
+        SubSets uss = new SubSets();
         List<List<Integer>> result = uss.subsets(new int[] {1,2,3});
 
         Collections.sort(result, listComparator);
