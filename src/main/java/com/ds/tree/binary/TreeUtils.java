@@ -113,4 +113,25 @@ public class TreeUtils {
             printTreeGraphics(node.right, prefix + (isLeft ? "│   " : "    "), false);
         }
     }
+
+    public static boolean isBST(TreeNode node){
+        if (node == null)
+        {
+            return true;
+        }
+        return isBSTHelp(node);
+    }
+
+    private static boolean isBSTHelp(TreeNode node) {
+        if(node.left == null && node.right == null)
+            return true;
+        boolean isRightBST = true;
+        boolean isLeftBST = true;
+        if(node.left !=null)
+            isLeftBST = (node.val >= node.left.val) && isBSTHelp(node.left);
+        if(node.right !=null)
+            isRightBST = (node.val <= node.right.val) && isBSTHelp(node.right);
+        return isLeftBST && isRightBST;
+
+    }
 }
