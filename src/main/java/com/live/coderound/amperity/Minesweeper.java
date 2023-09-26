@@ -1,4 +1,4 @@
-package com.company;
+package com.live.coderound.amperity;
 
 import java.util.Random;
 import java.util.Stack;
