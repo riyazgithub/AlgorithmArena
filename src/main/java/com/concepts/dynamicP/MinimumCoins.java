@@ -26,7 +26,7 @@ public class MinimumCoins {
         return 0;
     }
 
-    public int coinChange(int[] coins, int amount) {
+    public int coinChange1(int[] coins, int amount) {
         if (amount ==0)
             return 0;
         int[] combination = new int[amount+1];
@@ -44,9 +44,31 @@ public class MinimumCoins {
         return combination[amount]== amount+1 ? -1 : combination[amount] ;
     }
 
+    public int coinChange(int[] coins, int amount) {
+        int[] cc = new int[amount+1];
+        Arrays.fill(cc, amount+1);
+        for(int i =0; i< coins.length && coins[i] < amount; i++){
+            cc[coins[i]] = 1;
+            System.out.println("cc[i]: "+coins[i]+" = "+cc[coins[i]]);
+        }
+        cc[0] =0;
+        for(int i=1; i<= amount; i++) {
+            int min = amount +1;
+            for(int j = 0; j<coins.length && i >=coins[j]; j++) {
+                {
+                    System.out.println("Min before "+min +" "+cc[i-coins[j]] + " i: "+i);
+                    min = Math.min(min, cc[i-coins[j]]);
+                    System.out.println("Min after "+min);
+                }
+            }
+            cc[i] = min +1;
+        }
+        return cc[amount] > amount? -1 : cc[amount];
+    }
+
     public static void main(String[] args) {
-        int[] coinInt = new int[]{1,2,5};
-        int amount = 10;
+        int[] coinInt = new int[]{5,306,188,467,494};
+        int amount = 7047;
         MinimumCoins mc = new MinimumCoins();
         System.out.println("Result "+ mc.coinChange(coinInt, amount));
 
