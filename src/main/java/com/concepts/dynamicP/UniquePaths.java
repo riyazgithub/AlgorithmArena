@@ -22,7 +22,7 @@ public class UniquePaths {
             System.arraycopy(currentRow, 0, previousRow, 0, n);
         }
 
-        return previousRow[n - 1];
+        return currentRow[n - 1];
     }
 
     public static void main(String[] args) {

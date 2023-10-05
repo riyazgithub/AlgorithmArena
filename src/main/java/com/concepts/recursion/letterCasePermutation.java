@@ -16,25 +16,28 @@ public class letterCasePermutation {
         List<String> permute = new ArrayList<>();
         List<String> re = new ArrayList<>();
 //        lcPermuteHelp(s.toCharArray(),permute);
-        lcPermuteHelpRecur(s.toCharArray(),permute, new String(), 0);
+        lcPermuteHelpRecur(s.toCharArray(),permute, new StringBuilder(), 0);
 //        for (StringBuilder p :permute) {
 //            re.add(p.toString());
 //        }
         return permute;
     }
 
-    private void lcPermuteHelpRecur(char[] charArray, List<String> permute, String slate, int index) {
+    private void lcPermuteHelpRecur(char[] charArray, List<String> permute, StringBuilder slate, int index) {
         if(slate.length() == charArray.length)
         {
-            permute.add(slate);
+            permute.add(new String(slate));
             return;
         }
         char c = charArray[index];
         if(Character.isAlphabetic(c)) {
-            lcPermuteHelpRecur(charArray, permute, slate+Character.toLowerCase(c), index +1 );
-            lcPermuteHelpRecur(charArray, permute, slate+Character.toUpperCase(c), index +1 );
+            lcPermuteHelpRecur(charArray, permute, slate.append(Character.toLowerCase(c)), index +1 );
+            slate.deleteCharAt(slate.length()-1);
+            lcPermuteHelpRecur(charArray, permute, slate.append(Character.toUpperCase(c)), index +1 );
+            slate.deleteCharAt(slate.length()-1);
         } else {
-            lcPermuteHelpRecur(charArray, permute, slate+c, index +1 );
+            lcPermuteHelpRecur(charArray, permute, slate.append(c), index +1 );
+            slate.deleteCharAt(slate.length()-1);
         }
     }
 
@@ -56,4 +59,8 @@ public class letterCasePermutation {
         }
     }
 
+    public static void main(String[] args) {
+        letterCasePermutation lcp = new letterCasePermutation();
+        System.out.println(lcp.letterCasePermutation("a2b2c"));
+    }
 }

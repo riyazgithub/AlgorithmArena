@@ -1,6 +1,6 @@
 package com.concepts.recursion;
 
-public class backtrackingex1 {
+public class GenerateBinString {
 
     /**
      * Let's take a simple example: Generating all binary strings of length n.
