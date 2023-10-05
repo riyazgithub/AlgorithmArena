@@ -30,6 +30,10 @@ public class LCABinaryTree {
         Integer[] arr = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15};
         TreeNode root = TreeUtils.arrayToTree(arr);
         TreeUtils.printTreeGraphics(root);
-        LCA
+        LCABinaryTree lcaBinaryTree = new LCABinaryTree();
+        TreeNode p = new TreeNode(13);
+        TreeNode q = new TreeNode(88);
+        lcaBinaryTree.lowestCommonAncestor(root, p, q);
+        System.out.println(lcaBinaryTree.lca);
     }
 }
