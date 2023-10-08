@@ -58,5 +58,6 @@ class TopologicalSort {
         int[][] edges = {{3, 2}, {3, 0}, {4, 0}, {4, 1}, {5, 2}, {5, 4}};
         List<Integer> result = sort(vertices, edges);
         System.out.println(result);  // Output: [5, 4, 3, 0, 2, 1]
+
     }
 }
