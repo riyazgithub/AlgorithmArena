@@ -3,11 +3,11 @@ package com.ds.graphs;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class Graph {
+public class GraphNode {
     private int vertices;
     private LinkedList<Integer>[] adjacencyList;
 
-    Graph(int vertices) {
+    GraphNode(int vertices) {
         this.vertices = vertices;
         adjacencyList = new LinkedList[vertices];
         for (int i = 0; i < vertices; i++) {
