@@ -8,12 +8,9 @@ public class kthposition {
         for(int[] p : points) {
             pq.offer(p);
             if(pq.size() > k) { // If the size of heap is more than k then remove the smallest element
-                System.out.println("Current size "+pq.size());
-                //printing pq
-                for(int[] i : pq) {
-                    System.out.print("["+i[0]+","+i[1]+"]");
-                }
-                System.out.println();
+//                System.out.println("Current size "+pq.size());
+
+//                System.out.println();
                 pq.poll();
             }
         }
